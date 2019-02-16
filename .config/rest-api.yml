@@ -1,0 +1,14 @@
+server:
+  servlet:
+    context-path: /rest
+  port: 8080
+env: prod
+application:
+  name: demo-spring-boot
+  description: This the dummy Spring Boot Application
+spring:
+  data:
+    mongodb:
+      host: prod.mongo
+      port: 27017
+      database: rest-api

@@ -1,0 +1,16 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea
+.mvn
+src/**/
+target/**/
+!target/rest-api-0.0.1-SNAPSHOT.jar
+.gitignore
+mvnw
+mvnw.cmd
+pom.xml
+rest-api.iml
+*.iml
+.git
+.cache
+*.md
+*.jar,*.war
