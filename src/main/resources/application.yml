@@ -12,3 +12,5 @@ spring:
       host: localhost
       port: 27017
       database: rest-api
+
+api-version: api/v1

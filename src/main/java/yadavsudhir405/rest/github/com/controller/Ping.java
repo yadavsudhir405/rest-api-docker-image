@@ -9,7 +9,7 @@ import yadavsudhir405.rest.github.com.config.ApplicationConfig;
  * Created by sudhiry on 1/26/19.
  */
 @RestController
-@RequestMapping("/ping")
+@RequestMapping(path = "${api-version}/ping")
 public class Ping {
 
     private final  ApplicationConfig applicationConfig;
