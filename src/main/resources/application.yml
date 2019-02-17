@@ -14,3 +14,6 @@ spring:
       database: rest-api
 
 api-version: api/v1
+person:
+  name: sudhir
+  age: 20

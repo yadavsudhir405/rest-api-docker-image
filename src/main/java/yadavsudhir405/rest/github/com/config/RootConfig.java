@@ -17,13 +17,18 @@ public class RootConfig {
     @Value("${env}")
     private String env;
 
-    public RootConfig(UserService userService) {
+
+    private Person person;
+
+    public RootConfig(UserService userService, Person person) {
         this.userService = userService;
+        this.person = person;
     }
 
     @Bean
     public CommandLineRunner getCommandLiner(){
         return (args)->{
+            System.out.println("****"+ person.getName());
           //  this.userService.save(new User(args[0], args[1]));
         };
     }
