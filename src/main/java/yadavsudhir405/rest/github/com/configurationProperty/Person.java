@@ -1,13 +1,10 @@
-package yadavsudhir405.rest.github.com.config;
+package yadavsudhir405.rest.github.com.configurationProperty;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 
 /**
  * Created by sudhiry on 2/17/19.
  */
-@Configuration
-@ConfigurationProperties(prefix = "person")
 public class Person {
     private String name;
     private int age;
