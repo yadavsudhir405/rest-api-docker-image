@@ -3,7 +3,7 @@ package yadavsudhir405.rest.github.com.controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import yadavsudhir405.rest.github.com.config.ApplicationConfig;
+import yadavsudhir405.rest.github.com.config.RootConfig;
 
 /**
  * Created by sudhiry on 1/26/19.
@@ -12,9 +12,9 @@ import yadavsudhir405.rest.github.com.config.ApplicationConfig;
 @RequestMapping(path = "${api-version}/ping")
 public class Ping {
 
-    private final  ApplicationConfig applicationConfig;
+    private final RootConfig applicationConfig;
 
-    public Ping(ApplicationConfig applicationConfig) {
+    public Ping(RootConfig applicationConfig) {
         this.applicationConfig = applicationConfig;
     }
 

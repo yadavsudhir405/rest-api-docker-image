@@ -11,13 +11,13 @@ import yadavsudhir405.rest.github.com.service.UserService;
  * Created by sudhiry on 1/25/19.
  */
 @Configuration
-public class ApplicationConfig {
+public class RootConfig {
 
     private final UserService userService;
     @Value("${env}")
     private String env;
 
-    public ApplicationConfig(UserService userService) {
+    public RootConfig(UserService userService) {
         this.userService = userService;
     }
 
@@ -31,4 +31,6 @@ public class ApplicationConfig {
     public String getEnv() {
         return "Hello "+env;
     }
+
+
 }
