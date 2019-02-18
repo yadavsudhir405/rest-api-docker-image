@@ -1,24 +1,13 @@
 package yadavsudhir405.rest.github.com.config;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.Resource;
 import org.springframework.http.CacheControl;
-import org.springframework.lang.Nullable;
-import org.springframework.web.servlet.config.annotation.*;
-import org.springframework.web.servlet.resource.PathResourceResolver;
-import org.springframework.web.servlet.resource.ResourceResolver;
-import org.springframework.web.servlet.resource.ResourceResolverChain;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import yadavsudhir405.rest.github.com.configurationProperty.WebApp;
 import yadavsudhir405.rest.github.com.configurationProperty.WebApps;
-
-import javax.servlet.http.HttpServletRequest;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URI;
-import java.net.URL;
-import java.util.List;
 
 /**
  * Created by sudhiry on 2/16/19.
@@ -28,9 +17,11 @@ import java.util.List;
 public class WebConfig implements WebMvcConfigurer {
 
     private WebApps webApps;
+    private WebAppWebRequestInterceptor webAppWebRequestInterceptor;
 
-    public WebConfig(WebApps webApps) {
+    public WebConfig(WebApps webApps, WebAppWebRequestInterceptor webAppWebRequestInterceptor) {
         this.webApps = webApps;
+        this.webAppWebRequestInterceptor = webAppWebRequestInterceptor;
     }
 
     @Override
@@ -42,13 +33,20 @@ public class WebConfig implements WebMvcConfigurer {
         });
     }
 
-   /* @Override
+    @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-      *//* webApps.getWebAppConfigs().stream().forEach(webApp -> {
+      /* webApps.getWebAppConfigs().stream().forEach(webApp -> {
             registry.addViewController(getUrlPath(webApp)).setViewName(getViewName(webApp));
-       });*//*
+       });*/
        registry.addRedirectViewController("/apidocs","/swagger-ui.html");
-    }*/
+    }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addWebRequestInterceptor(this.webAppWebRequestInterceptor);
+    }
+
+
 
     private String getRedirectUrl(WebApp webApp) {
         String defaultFileName = webApp.getConfig().getDefaultFileName();
