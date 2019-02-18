@@ -14,6 +14,10 @@
       "name": "rest-api.white-listed-file-type",
       "type": "yadavsudhir405.rest.github.com.configurationProperty.WhileListedFileTypes",
       "sourceType": "yadavsudhir405.rest.github.com.configurationProperty.WhileListedFileTypes"
+    },
+    {
+      "name": "rest-api.admins",
+      "type": "yadavsudhir405.rest.github.com.configurationProperty.Admins"
     }
   ],
   "properties": [
@@ -26,40 +30,61 @@
       "type": "java.lang.Integer"
     },
     {
+      "name": "rest-api.person.sex",
+      "type": "yadavsudhir405.rest.github.com.configurationProperty.Sex"
+    },
+    {
       "name": "rest-api.white-listed-file-type",
       "type": "java.util.Set"
+    },
+    {
+      "name": "rest-api.admins",
+      "type": "java.util.List<yadavsudhir405.rest.github.com.configurationProperty.Person>"
+    },
+    {
+      "name": "rest-api.web-app-configs",
+      "type": "java.util.Set<yadavsudhir405.rest.github.com.configurationProperty.WebApp>"
+    },
+    {
+      "name":"rest-api.web-app-configs.app",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "rest-api.web-app-configs.config",
+      "type":"yadavsudhir405.rest.github.com.configurationProperty.Config"
+    },
+    {
+      "name":"rest-api.web-app-configs.config.applicationContext",
+      "type":"java.lang.String"
+    },
+    {
+      "name":"rest-api.web-app-configs.config.webDistoDir",
+      "type":"java.lang.String"
+    },
+    {
+      "name":"rest-api.web-app-configs.config.defaultFileName",
+      "type":"java.lang.String"
     }
   ],
   "hints": [
     {
-      "name": "rest-api.person.name",
+      "name": "rest-api.white-listed-file-type",
       "values": [
         {
-          "value": "Sudhir",
-          "description": "fasdf"
+          "value": "html"
         },
         {
-          "value": "adsf",
-          "description": "asdfasd"
+          "value": "css"
         }
       ]
     },
     {
-      "name": "rest-api.person.age",
-      "values": [
-        {
-          "value": 12
-        }
-      ]
-    },
-    {
-      "name": "rest-api.white-listed-file-type",
+      "name": "rest-api.person.sex",
       "values": [{
-        "value": "html"
+        "value": "MALE"
       },{
-        "value": "css"
+        "value": "FEMALE"
       }]
     }
-
   ]
 }

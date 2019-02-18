@@ -1,10 +1,13 @@
 package yadavsudhir405.rest.github.com.configurationProperty;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
 import java.util.Set;
 
 /**
  * Created by sudhiry on 2/17/19.
  */
+@ConfigurationProperties(prefix = "rest-api", ignoreUnknownFields = true)
 public class WebApps {
     Set<WebApp> webAppConfigs;
 

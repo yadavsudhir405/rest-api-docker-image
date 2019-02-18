@@ -7,6 +7,8 @@ import yadavsudhir405.rest.github.com.configurationProperty.*;
 
 import java.util.*;
 
+import static yadavsudhir405.rest.github.com.configurationProperty.Sex.*;
+
 /**
  * Created by sudhiry on 2/17/19.
  */
@@ -18,6 +20,7 @@ public class PropertiesConfig {
         Person person = new Person();
         person.setName("defaultName");
         person.setAge(40);
+        person.setSex(MALE);
         return person;
     }
     @Bean
@@ -28,12 +31,11 @@ public class PropertiesConfig {
     }
 
     @Bean
-    @ConfigurationProperties("admins")
     public Admins admin(){
         Admins admins = new Admins();
         List<Person> adminList = new ArrayList<>();
         adminList.add(defaultAdmin());
-        admins.setPersons(adminList);
+        admins.setAdmins(adminList);
         return admins;
     }
 
@@ -44,7 +46,6 @@ public class PropertiesConfig {
     }
 
     @Bean
-    @ConfigurationProperties
     public WebApps webApps(){
         return newEmptyWebApps();
     }

@@ -14,6 +14,7 @@ public class RestApiProperties {
     @NestedConfigurationProperty
     private Person person;
 
+
     public Person getPerson() {
         return person;
     }

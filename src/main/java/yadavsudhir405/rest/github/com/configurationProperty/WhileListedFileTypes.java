@@ -11,7 +11,7 @@ import java.util.Set;
  * Created by sudhiry on 2/18/19.
  */
 @ConfigurationProperties(
-        prefix = "rest-api"
+        prefix = "rest-api.white-listed-types"
 )
 @Configuration
 public class WhileListedFileTypes {

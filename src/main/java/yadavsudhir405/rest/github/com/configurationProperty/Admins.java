@@ -1,20 +1,21 @@
 package yadavsudhir405.rest.github.com.configurationProperty;
 
-import yadavsudhir405.rest.github.com.configurationProperty.Person;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.util.List;
 
 /**
  * Created by sudhiry on 2/17/19.
  */
+@ConfigurationProperties(prefix = "rest-api", ignoreUnknownFields = true)
 public class Admins {
-    List<Person> persons;
+    List<Person> admins;
 
-    public List<Person> getPersons() {
-        return persons;
+    public List<Person> getAdmins() {
+        return admins;
     }
 
-    public void setPersons(List<Person> persons) {
-        this.persons = persons;
+    public void setAdmins(List<Person> admins) {
+        this.admins = admins;
     }
 }

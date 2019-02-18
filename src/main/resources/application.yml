@@ -14,12 +14,6 @@ spring:
       database: rest-api
 
 api-version: api/v1
-admins:
-  persons:
-    - name: admin1
-      age: 56
-    - name: admin2
-      age: 60
 dbs:
   db1:
     username: admin
@@ -33,21 +27,7 @@ dbs:
     host:
       host: localhost
       port: 9087
-web-app-configs:
-  - app: web1
-    config:
-      application-context: /web1/
-      web-disto-dir: /Users/sudhiry/yadavsudhir405/angularjs-es/dist
-      default-file-name: index.html
-  - app: web2
-    config:
-      application-context: /web2
-      web-disto-dir: /opt/rest-api/web2
-      default-file-name: index.html
 rest-api:
-  person:
-    name: adsf
-    age: 12
   white-listed-file-type:
     - html
     - css
@@ -56,5 +36,18 @@ rest-api:
     - jpeg
     - png
     - PNG
-
-
+    - pneg
+  person:
+    sex: MALE
+    age: 26
+    name: demoName
+  admins:
+    - name: asdfsa
+      age: 45
+      sex: MALE
+  web-app-configs:
+    - app: web1
+      config:
+        applicationContext: /web1
+        webDistoDir: /Users/sudhiry/yadavsudhir405/angularjs-es/dist
+        defaultFileName: index.html
