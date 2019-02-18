@@ -14,12 +14,17 @@ import java.util.*;
 public class PropertiesConfig {
 
     @Bean
-    @ConfigurationProperties("person")
     public Person person(){
         Person person = new Person();
         person.setName("defaultName");
         person.setAge(40);
         return person;
+    }
+    @Bean
+    public RestApiProperties restApiProperties(Person person){
+        RestApiProperties restApiProperties = new RestApiProperties();
+        restApiProperties.setPerson(person);
+        return restApiProperties;
     }
 
     @Bean

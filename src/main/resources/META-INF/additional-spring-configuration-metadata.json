@@ -1,0 +1,65 @@
+{
+  "groups": [
+    {
+      "name": "rest-api",
+      "type": "yadavsudhir405.rest.github.com.configurationProperty.RestApiProperties",
+      "sourceType": "yadavsudhir405.rest.github.com.config.PropertiesConfig"
+    },
+    {
+      "name": "rest-api.person",
+      "type": "yadavsudhir405.rest.github.com.configurationProperty.Person",
+      "sourceType": "yadavsudhir405.rest.github.com.config.PropertiesConfig"
+    },
+    {
+      "name": "rest-api.white-listed-file-type",
+      "type": "yadavsudhir405.rest.github.com.configurationProperty.WhileListedFileTypes",
+      "sourceType": "yadavsudhir405.rest.github.com.configurationProperty.WhileListedFileTypes"
+    }
+  ],
+  "properties": [
+    {
+      "name": "rest-api.person.name",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "rest-api.person.age",
+      "type": "java.lang.Integer"
+    },
+    {
+      "name": "rest-api.white-listed-file-type",
+      "type": "java.util.Set"
+    }
+  ],
+  "hints": [
+    {
+      "name": "rest-api.person.name",
+      "values": [
+        {
+          "value": "Sudhir",
+          "description": "fasdf"
+        },
+        {
+          "value": "adsf",
+          "description": "asdfasd"
+        }
+      ]
+    },
+    {
+      "name": "rest-api.person.age",
+      "values": [
+        {
+          "value": 12
+        }
+      ]
+    },
+    {
+      "name": "rest-api.white-listed-file-type",
+      "values": [{
+        "value": "html"
+      },{
+        "value": "css"
+      }]
+    }
+
+  ]
+}

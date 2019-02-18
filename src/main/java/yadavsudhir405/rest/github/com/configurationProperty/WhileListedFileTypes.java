@@ -10,7 +10,9 @@ import java.util.Set;
 /**
  * Created by sudhiry on 2/18/19.
  */
-@ConfigurationProperties
+@ConfigurationProperties(
+        prefix = "rest-api"
+)
 @Configuration
 public class WhileListedFileTypes {
 

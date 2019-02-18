@@ -14,9 +14,6 @@ spring:
       database: rest-api
 
 api-version: api/v1
-person:
-  name: Sudhir
-  age: 89
 admins:
   persons:
     - name: admin1
@@ -47,4 +44,17 @@ web-app-configs:
       application-context: /web2
       web-disto-dir: /opt/rest-api/web2
       default-file-name: index.html
+rest-api:
+  person:
+    name: adsf
+    age: 12
+  white-listed-file-type:
+    - html
+    - css
+    - js
+    - jpg
+    - jpeg
+    - png
+    - PNG
+
 
