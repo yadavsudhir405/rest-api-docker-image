@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class ViewController {
-    //@RequestMapping("/web1/**/{path:[^\\.]+}/")
-   // @RequestMapping("/web1/**")
+    //@RequestMapping("/web1/{path:[^\\.]+}/**")
     public String forward() {
         return "forward:/web1/index.html";
     }

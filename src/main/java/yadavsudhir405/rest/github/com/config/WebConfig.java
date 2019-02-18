@@ -42,12 +42,20 @@ public class WebConfig implements WebMvcConfigurer {
         });
     }
 
-    @Override
+   /* @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-       webApps.getWebAppConfigs().stream().forEach(webApp -> {
+      *//* webApps.getWebAppConfigs().stream().forEach(webApp -> {
             registry.addViewController(getUrlPath(webApp)).setViewName(getViewName(webApp));
-       });
+       });*//*
        registry.addRedirectViewController("/apidocs","/swagger-ui.html");
+    }*/
+
+    private String getRedirectUrl(WebApp webApp) {
+        String defaultFileName = webApp.getConfig().getDefaultFileName();
+        if(defaultFileName.startsWith("/")){
+            defaultFileName = defaultFileName.substring(1);
+        }
+        return "/" +webApp.getApp()+"/"+defaultFileName;
     }
 
     private String getViewName(WebApp webApp) {
@@ -55,7 +63,7 @@ public class WebConfig implements WebMvcConfigurer {
         if(defaultFileName.startsWith("/")){
             defaultFileName = defaultFileName.substring(1);
         }
-        return "forward:/" +webApp.getApp()+"as/"+defaultFileName;
+        return "forward:/" +webApp.getApp()+"/"+defaultFileName;
     }
 
     private String getUrlPath(WebApp webApp) {
@@ -80,7 +88,7 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
     private String buildPathPatternForApp(WebApp webApp) {
-        return  "/"+webApp.getApp()+"as/**";
+        return  "/"+webApp.getApp()+"/**";
     }
 
 }
