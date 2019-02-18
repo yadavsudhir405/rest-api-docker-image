@@ -39,13 +39,11 @@ dbs:
 web-app-configs:
   - app: web1
     config:
-      web1:
-        application-context: /web1
-        web-disto-dir: file:/Users/sudhiry/yadavsudhir405/angularjs-es/dist
-        default-file-name: index.html
+      application-context: /web1
+      web-disto-dir: /Users/sudhiry/yadavsudhir405/angularjs-es/dist
+      default-file-name: index.html
   - app: web2
     config:
-      web2:
-        application-context: /web2
-        web-disto-dir: file:/opt/rest-api/web
-        default-file-name: index.html
+      application-context: /web2
+      web-disto-dir: /opt/rest-api/web1
+      default-file-name: index.html

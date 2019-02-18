@@ -1,13 +1,11 @@
 package yadavsudhir405.rest.github.com.configurationProperty;
 
-import java.util.Map;
-
 /**
  * Created by sudhiry on 2/17/19.
  */
 public class WebApp {
     private String app;
-    Map<String, Config> config;
+    private Config config;
 
     public String getApp() {
         return app;
@@ -17,11 +15,11 @@ public class WebApp {
         this.app = app;
     }
 
-    public Map<String, Config> getConfig() {
+    public Config getConfig() {
         return config;
     }
 
-    public void setConfig(Map<String, Config> config) {
+    public void setConfig(Config config) {
         this.config = config;
     }
 

@@ -57,29 +57,6 @@ public class PropertiesConfig {
         return webApps;
     }
 
-    private Set<WebApp> defaultWepAppConfig() {
-        Set<WebApp> webApps = new HashSet<>();
-        webApps.add(defaultWepApp());
-        return webApps;
-    }
-
-    private WebApp defaultWepApp() {
-        WebApp webApp = new WebApp();
-        webApp.setApp("defaultWebApp");
-        webApp.setConfig(defaultConfig());
-        return webApp;
-    }
-
-    private Map<String, WebApp.Config> defaultConfig() {
-        Map<String, WebApp.Config> map = new HashMap<>();
-        WebApp.Config config = new WebApp.Config();
-        config.setApplicationContext("/default");
-        config.setWebDistoDir("/opt");
-        config.setDefaultFileName("index.html");
-        map.put("defaultWepApp",config);
-        return map;
-    }
-
     private Database buildDefaultDatabases() {
         Database database =  new Database();
         Map<String, DataSourceConfig> dataSources = new HashMap<>();

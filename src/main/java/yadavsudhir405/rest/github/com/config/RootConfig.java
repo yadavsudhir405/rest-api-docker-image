@@ -40,8 +40,6 @@ public class RootConfig {
             this.admins.getPersons().stream().forEach(person1 -> System.out.println(person1.getName()+"\n"));
             this.databases.getDbs().keySet().stream().forEach(System.out::println);
             this.databases.getDbs().values().stream().forEach(System.out::println);
-            System.out.println("****");
-          //  this.userService.save(new User(args[0], args[1]));
         };
     }
 
