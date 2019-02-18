@@ -47,3 +47,4 @@ web-app-configs:
       application-context: /web2
       web-disto-dir: /opt/rest-api/web2
       default-file-name: index.html
+

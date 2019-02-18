@@ -35,9 +35,6 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-      /* webApps.getWebAppConfigs().stream().forEach(webApp -> {
-            registry.addViewController(getUrlPath(webApp)).setViewName(getViewName(webApp));
-       });*/
        registry.addRedirectViewController("/apidocs","/swagger-ui.html");
     }
 
@@ -46,34 +43,6 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addWebRequestInterceptor(this.webAppWebRequestInterceptor);
     }
 
-
-
-    private String getRedirectUrl(WebApp webApp) {
-        String defaultFileName = webApp.getConfig().getDefaultFileName();
-        if(defaultFileName.startsWith("/")){
-            defaultFileName = defaultFileName.substring(1);
-        }
-        return "/" +webApp.getApp()+"/"+defaultFileName;
-    }
-
-    private String getViewName(WebApp webApp) {
-        String defaultFileName = webApp.getConfig().getDefaultFileName();
-        if(defaultFileName.startsWith("/")){
-            defaultFileName = defaultFileName.substring(1);
-        }
-        return "forward:/" +webApp.getApp()+"/"+defaultFileName;
-    }
-
-    private String getUrlPath(WebApp webApp) {
-        String applicationContext = webApp.getConfig().getApplicationContext();
-        if(!applicationContext.startsWith("/")){
-            applicationContext = "/"+applicationContext;
-        }
-        if(!applicationContext.endsWith("/")){
-            applicationContext = applicationContext+ "/";
-        }
-        return applicationContext+"**";
-    }
     private String buildResourceLocationForApp(WebApp webApp) {
         String distroLocation = webApp.getConfig().getWebDistoDir();
         if(!distroLocation.endsWith("/")){
