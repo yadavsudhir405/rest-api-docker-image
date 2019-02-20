@@ -17,26 +17,20 @@ public class RootConfig {
     @Value("${env}")
     private String env;
 
-    private Person person;
-    private Admins admins;
-    private Database databases;
-    private WebApps  webApps;
-    private WhileListedFileTypes whileListedFileTypes;
 
-    public RootConfig(UserService userService, Person person, Admins admins, Database databases,
-                      WebApps webapps, WhileListedFileTypes whileListedFileTypes) {
+    private RequiredService databases;
+    private RestApiProperties restApiProperties;
+
+    public RootConfig(UserService userService,  RestApiProperties restApiProperties) {
         this.userService = userService;
-        this.person = person;
-        this.admins = admins;
+        this.restApiProperties = restApiProperties;
         this.databases = databases;
-        this.webApps = webapps;
-        this.whileListedFileTypes =  whileListedFileTypes;
     }
 
     @Bean
     public CommandLineRunner getCommandLiner(){
         return (args)->{
-           this.whileListedFileTypes.getWhiteListedFileType().stream().forEach(System.out::println);
+           this.restApiProperties.getWhiteListedFileType().stream().forEach(System.out::println);
         };
     }
 

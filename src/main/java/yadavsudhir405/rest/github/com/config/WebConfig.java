@@ -6,8 +6,10 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import yadavsudhir405.rest.github.com.configurationProperty.RestApiProperties;
 import yadavsudhir405.rest.github.com.configurationProperty.WebApp;
-import yadavsudhir405.rest.github.com.configurationProperty.WebApps;
+
+import java.util.Set;
 
 /**
  * Created by sudhiry on 2/16/19.
@@ -16,17 +18,17 @@ import yadavsudhir405.rest.github.com.configurationProperty.WebApps;
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
-    private WebApps webApps;
+    private final Set<WebApp> webApps;
     private WebAppWebRequestInterceptor webAppWebRequestInterceptor;
 
-    public WebConfig(WebApps webApps, WebAppWebRequestInterceptor webAppWebRequestInterceptor) {
-        this.webApps = webApps;
+    public WebConfig(RestApiProperties restApiProperties, WebAppWebRequestInterceptor webAppWebRequestInterceptor) {
+        this.webApps = restApiProperties.getWebApps();
         this.webAppWebRequestInterceptor = webAppWebRequestInterceptor;
     }
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        webApps.getWebAppConfigs().stream().forEach(webApp -> {
+        this.webApps.stream().forEach(webApp -> {
             registry.addResourceHandler(buildPathPatternForApp(webApp))
                     .addResourceLocations(buildResourceLocationForApp(webApp))
                     .setCacheControl(CacheControl.noCache()).resourceChain(true);

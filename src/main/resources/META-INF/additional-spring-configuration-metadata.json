@@ -2,22 +2,15 @@
   "groups": [
     {
       "name": "rest-api",
-      "type": "yadavsudhir405.rest.github.com.configurationProperty.RestApiProperties",
-      "sourceType": "yadavsudhir405.rest.github.com.config.PropertiesConfig"
+      "type": "yadavsudhir405.rest.github.com.configurationProperty.RestApiProperties"
     },
     {
       "name": "rest-api.person",
-      "type": "yadavsudhir405.rest.github.com.configurationProperty.Person",
-      "sourceType": "yadavsudhir405.rest.github.com.config.PropertiesConfig"
+      "type": "yadavsudhir405.rest.github.com.configurationProperty.Person"
     },
     {
-      "name": "rest-api.white-listed-file-type",
-      "type": "yadavsudhir405.rest.github.com.configurationProperty.WhileListedFileTypes",
-      "sourceType": "yadavsudhir405.rest.github.com.configurationProperty.WhileListedFileTypes"
-    },
-    {
-      "name": "rest-api.admins",
-      "type": "yadavsudhir405.rest.github.com.configurationProperty.Admins"
+      "name": "rest-api.required-services",
+      "type": "yadavsudhir405.rest.github.com.configurationProperty.RequiredService"
     }
   ],
   "properties": [
@@ -34,57 +27,17 @@
       "type": "yadavsudhir405.rest.github.com.configurationProperty.Sex"
     },
     {
-      "name": "rest-api.white-listed-file-type",
-      "type": "java.util.Set"
-    },
-    {
       "name": "rest-api.admins",
       "type": "java.util.List<yadavsudhir405.rest.github.com.configurationProperty.Person>"
     },
     {
-      "name": "rest-api.web-app-configs",
+      "name": "rest-api.whiteListedFileType",
+      "type": "java.util.Set<yadavsudhir405.rest.github.com.configurationProperty.FileType>"
+    },
+    {
+      "name": "rest-api.webApps",
       "type": "java.util.Set<yadavsudhir405.rest.github.com.configurationProperty.WebApp>"
-    },
-    {
-      "name":"rest-api.web-app-configs.app",
-      "type": "java.lang.String"
-    },
-    {
-      "name": "rest-api.web-app-configs.config",
-      "type":"yadavsudhir405.rest.github.com.configurationProperty.Config"
-    },
-    {
-      "name":"rest-api.web-app-configs.config.applicationContext",
-      "type":"java.lang.String"
-    },
-    {
-      "name":"rest-api.web-app-configs.config.webDistoDir",
-      "type":"java.lang.String"
-    },
-    {
-      "name":"rest-api.web-app-configs.config.defaultFileName",
-      "type":"java.lang.String"
     }
   ],
-  "hints": [
-    {
-      "name": "rest-api.white-listed-file-type",
-      "values": [
-        {
-          "value": "html"
-        },
-        {
-          "value": "css"
-        }
-      ]
-    },
-    {
-      "name": "rest-api.person.sex",
-      "values": [{
-        "value": "MALE"
-      },{
-        "value": "FEMALE"
-      }]
-    }
-  ]
+  "hints": []
 }

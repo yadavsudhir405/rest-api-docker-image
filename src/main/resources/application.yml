@@ -14,40 +14,30 @@ spring:
       database: rest-api
 
 api-version: api/v1
-dbs:
-  db1:
-    username: admin
-    password: password
-    host:
-      host: localhost
-      port: 6890
-  db2:
-    username: admin1
-    password: passworss
-    host:
-      host: localhost
-      port: 9087
 rest-api:
-  white-listed-file-type:
-    - html
-    - css
-    - js
-    - jpg
-    - jpeg
-    - png
-    - PNG
-    - pneg
-  person:
-    sex: MALE
-    age: 26
-    name: demoName
-  admins:
-    - name: asdfsa
-      age: 45
-      sex: MALE
   web-app-configs:
     - app: web1
       config:
         applicationContext: /web1
         webDistoDir: /Users/sudhiry/yadavsudhir405/angularjs-es/dist
         defaultFileName: index.html
+  person:
+    name: CustomPerson
+    age: 45
+    sex: male
+  whiteListedFileType:
+    - HTML
+    - CSS
+    - JPEG
+    - JPG
+    - JS
+    - PDF
+    - PNG
+  admins:
+    - name: Admin1
+      age: 45
+      sex: MALE
+    - name: Admin2
+      age: 56
+      sex: FEMALE
+

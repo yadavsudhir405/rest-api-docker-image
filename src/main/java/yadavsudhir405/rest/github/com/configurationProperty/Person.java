@@ -6,10 +6,14 @@ import org.springframework.boot.context.properties.NestedConfigurationProperty;
  * Created by sudhiry on 2/17/19.
  */
 public class Person {
-    private String name;
-    private int age;
+    private static final String DEFAULT_NAME = "defaultUser";
+    private static final int DEFAULT_AGE = 23;
+    private static final Sex DEFAULT_SEX = Sex.MALE;
+
+    private String name = DEFAULT_NAME;
+    private int age = DEFAULT_AGE;
     @NestedConfigurationProperty
-    private Sex sex;
+    private Sex sex = DEFAULT_SEX;
 
     public Sex getSex() {
         return sex;

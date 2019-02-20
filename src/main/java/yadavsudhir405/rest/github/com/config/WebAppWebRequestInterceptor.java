@@ -1,21 +1,20 @@
 package yadavsudhir405.rest.github.com.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.context.request.WebRequestInterceptor;
 import org.springframework.web.servlet.handler.DispatcherServletWebRequest;
+import yadavsudhir405.rest.github.com.configurationProperty.RestApiProperties;
 import yadavsudhir405.rest.github.com.configurationProperty.WebApp;
-import yadavsudhir405.rest.github.com.configurationProperty.WebApps;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -26,10 +25,12 @@ public class WebAppWebRequestInterceptor implements WebRequestInterceptor {
 
     private final List<String> whiteListedFileTypes = Arrays.asList("html","js","css","jpg","jpeg","png");
 
-    private WebApps webApps;
+    private final  RestApiProperties restApiProperties;
+    private final Set<WebApp> webApps;
 
-    public WebAppWebRequestInterceptor(WebApps webApps) {
-        this.webApps = webApps;
+    public WebAppWebRequestInterceptor(RestApiProperties restApiProperties) {
+        this.restApiProperties = restApiProperties;
+        this.webApps = this.restApiProperties.getWebApps();
     }
 
     @Override
@@ -60,7 +61,7 @@ public class WebAppWebRequestInterceptor implements WebRequestInterceptor {
 
     }
     private WebApp requestURLContainsUserDefinedWebAppApplicationContextPath(StringBuffer requestURL) {
-        List<WebApp> matchedWebApps = this.webApps.getWebAppConfigs().stream().filter(webApp -> requestURL.toString()
+        List<WebApp> matchedWebApps = this.webApps.stream().filter(webApp -> requestURL.toString()
                 .contains(webApp.getConfig().getApplicationContext())).collect(Collectors.toList());
         return matchedWebApps.isEmpty() ? null : matchedWebApps.get(0);
 
