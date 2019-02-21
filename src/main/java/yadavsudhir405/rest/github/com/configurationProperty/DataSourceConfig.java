@@ -1,6 +1,5 @@
 package yadavsudhir405.rest.github.com.configurationProperty;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.NestedConfigurationProperty;
 
 /**

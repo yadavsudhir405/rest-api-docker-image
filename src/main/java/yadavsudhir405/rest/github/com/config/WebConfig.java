@@ -50,10 +50,10 @@ public class WebConfig implements WebMvcConfigurer {
         if(!distroLocation.endsWith("/")){
             distroLocation = distroLocation+"/";
         }
-        if(!distroLocation.startsWith("/")){
-            distroLocation = "/"+distroLocation;
+        if(!distroLocation.startsWith("file:/")){
+            distroLocation = "file:/"+distroLocation;
         }
-        return "file:"+distroLocation;
+        return distroLocation;
     }
 
     private String buildPathPatternForApp(WebApp webApp) {

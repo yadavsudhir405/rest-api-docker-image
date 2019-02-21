@@ -35,9 +35,28 @@ rest-api:
     - PNG
   admins:
     - name: Admin1
-      age: 45
-      sex: MALE
+      age: 22
+      sex: male
     - name: Admin2
-      age: 56
+      age: 45
       sex: FEMALE
+  web-apps:
+    - app: web1
+      config:
+        applicationContext: /web1
+        webDistoDir: file:/Users/sudhiry/yadavsudhir405/angularjs-es/dist
+        defaultFileName: index.html
 
+    - app: web2
+      config:
+        applicationContext: /web2
+        webDistoDir: file:/opt/rest-api/web2
+        default-file-name: index.html
+  required-services:
+    dbs:
+      MONGO:
+        username: admin
+        password: admin
+        host:
+          host: 192.168.0.1
+          port: 897987

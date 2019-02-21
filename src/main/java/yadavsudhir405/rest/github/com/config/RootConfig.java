@@ -18,13 +18,13 @@ public class RootConfig {
     private String env;
 
 
-    private RequiredService databases;
+    private RequiredService requiredService;
     private RestApiProperties restApiProperties;
 
-    public RootConfig(UserService userService,  RestApiProperties restApiProperties) {
+    public RootConfig(UserService userService,  RestApiProperties restApiProperties, RequiredService requiredService) {
         this.userService = userService;
         this.restApiProperties = restApiProperties;
-        this.databases = databases;
+        this.requiredService = requiredService;
     }
 
     @Bean
