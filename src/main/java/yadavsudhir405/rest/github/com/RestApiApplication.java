@@ -13,5 +13,6 @@ public class RestApiApplication  {
 	public static void main(String[] args) {
 		SpringApplication.run(RestApiApplication.class, args);
 		LOGGER.info("Application Started");
+		LOGGER.info("Playing with release plugin");
 	}
 }
