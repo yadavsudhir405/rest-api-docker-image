@@ -28,7 +28,7 @@
         <connection>scm:git:git@github.com:yadavsudhir405/rest-api-docker-image.git</connection>
         <developerConnection>scm:git:git@github.com:yadavsudhir405/rest-api-docker-image.git</developerConnection>
         <url>https://github.com/yadavsudhir405/rest-api-docker-image</url>
-        <tag>@{project.version}</tag>
+        <tag>rest-api-2.1.1-SNAPSHOT</tag>
     </scm>
 
     <dependencies>
