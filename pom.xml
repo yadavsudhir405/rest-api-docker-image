@@ -24,12 +24,6 @@
         <archtype.encoding>${encoding}</archtype.encoding>
     </properties>
 
-    <scm>
-        <connection>scm:git:git@github.com:yadavsudhir405/rest-api-docker-image.git</connection>
-        <developerConnection>scm:git:git@github.com:yadavsudhir405/rest-api-docker-image.git</developerConnection>
-        <url>https://github.com/yadavsudhir405/rest-api-docker-image</url>
-        <tag>@{project.version}</tag>
-    </scm>
 
     <dependencies>
         <dependency>
@@ -96,14 +90,4 @@
             </plugin>
         </plugins>
     </build>
-    <distributionManagement>
-        <snapshotRepository>
-            <id>internal</id>
-            <url>https://tools.yadavsudhir.com/archiva/repository/internal/</url>
-        </snapshotRepository>
-        <repository>
-            <id>internal</id>
-            <url>https://tools.yadavsudhir.com/archiva/repository/internal/</url>
-        </repository>
-    </distributionManagement>
 </project>
